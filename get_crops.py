@@ -15,10 +15,7 @@ CROP_DIR = 'data/crops'
 
 files = df['files']
 
-def resize_imgs(image_path, size=(200,200)):
-	im = Image.open(image_path)
-	new = im.resize(size, Image.ANTIALIAS)
-	return new
+size = (200,200)
 
 for file in files:
 	print(file)
@@ -29,8 +26,6 @@ for file in files:
 	xmax = int(annot_data['xmax'])
 	ymax = int(annot_data['ymax'])
 	crop = img[ymin:ymax,xmin:xmax]
-	cv2.imwrite(CROP_DIR + '/' + file.split('.')[0] + '.png', crop)
-	new_crop = resize_imgs(CROP_DIR + '/' + file.split('.')[0] + '.png')
-	os.remove(CROP_DIR + '/' + file.split('.')[0] + '.png')
+	new_crop = cv2.resize(crop, dsize=size, interpolation=cv2.INTER_CUBIC)
 	new_crop.save(CROP_DIR + '/' + file.split('.')[0] + '.png', 'PNG', quality=90)
 	

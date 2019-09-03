@@ -45,7 +45,7 @@ Open the file named ```common_flags.py``` and specify where you'd want to log yo
 
 then run
 ```bash
-python train.py --dataset_name=number_plates --max_number_of_steps=3000
+python train.py --dataset_name=number_plates --max_number_of_steps=6000
 ```
 ## Evaluating the model
 Run the following command from terminal.
@@ -59,6 +59,5 @@ From ```models/research/attention_ocr/python``` run the following command on you
 
 ```bash
 python demo_inference.py --dataset_name=number_plates \n 
---batch_size=1, checkpoint='models/research/attention_ocr/number_plates_model_logs/model.ckpt-3000', \n
---image_path_pattern=/home/crops/111.png
-```
+--batch_size=8, checkpoint='models/research/attention_ocr/number_plates_model_logs/model.ckpt-6000', \n
+--image_path_pattern=/home/anuj/crops/%d.png```
