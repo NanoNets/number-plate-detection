@@ -9,7 +9,7 @@ We will use tensorflow attention-ocr to predict the text present on number plate
 Please make sure you have the latest versions of tensorflow, opencv and pandas installed. 
 
 ## Getting training data
-We have images of number plates but we do not have the text in them or the bounding box numbers of the number plates in these images. Use an annotation tool to get your annotations and save them in a .csv file.
+We have [images of number plates](https://dataturks.com/projects/devika.mishra/Indian_Number_plates) but we do not have the text in them or the bounding box numbers of the number plates in these images. Use an annotation tool to get your annotations and save them in a .csv file.
 
 
 ## Getting crops
