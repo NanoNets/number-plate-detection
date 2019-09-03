@@ -25,26 +25,24 @@ ymax
 
 To crop the images and get only the cropped window we have to deal with different sized images. To do this we read the csv data in as a pandas dataframe and get our coordinates in such a way that we don't miss any information about the number plates while also maintaining a constant size of the crops. This will prove helpful when we are training our OCR model.
 
-script present in ```bash get_crops.py```
+script present in ```get_crops.py```
 
 ###Generate tfrecords
 Having stored our cropped images of equal sizes in a different directory, we can begin using those images to generate tfrecords that we will use to train our dataset. Here's a script to generate tfrecords. Note the max_width and max_height variables so we can specify the size of our crops to our tfrecord generation script. These tfrecords along with the label mapping have to be stored in the tensorflow object detection API inside the following directory -
 
 The dataset has to be in the FSNS dataset format. For this, your test and train tfrecords along with the charset labels text file are placed inside a folder named 'fsns' inside the 'datasets' directory. you can change this to another folder and upload your tfrecord files and charset-labels.txt here. You'll have to change the path in multiple places accordingly.
 
-tfrecord generation script present in 'get_tf_records.py'
+tfrecord generation script present in ```get_tf_records.py```
 
 ###Setting our Attention-OCR up
 Once we have our tfrecords and charset labels stored in the required directory, we need to write a dataset config script that will help us split our data into train and test for the attention OCR training script to process.
 
-Make a python file and name it 'number_plates.py' and place it inside the following directory:
-
-'models/research/attention_ocr/python/datasets'
+Make a python file and name it ```number_plates.py``` and place it inside the following directory: ```models/research/attention_ocr/python/datasets```
 The contents of the number-plates.py can be seen [here](https://github.com/codeaway23/models/blob/master/research/attention_ocr/python/datasets/number_plates.py). 
 
 ###Training the model
-Move into the following directory: models/research/attention_ocr
-Open the file named 'common_flags.py' and specify where you'd want to log your training.
+Move into the following directory: ```models/research/attention_ocr```
+Open the file named ```common_flags.py``` and specify where you'd want to log your training.
 
 then run
 ```bash
@@ -57,8 +55,8 @@ Run the following command from terminal.
 python eval.py --dataset_name='number_plates'
 ```
 
-Get predictions
-In models/research/attention_ocr/python open the file demo_inference.py and comment out the following lines.
+###Get predictions
+In ```models/research/attention_ocr/python``` open the file ```demo_inference.py``` and comment out the following lines.
 
 ```python
 def load_images(file_pattern, batch_size, dataset_name):
