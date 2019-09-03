@@ -55,22 +55,7 @@ python eval.py --dataset_name='number_plates'
 ```
 
 ## Get predictions
-In ```models/research/attention_ocr/python``` open the file ```demo_inference.py``` and comment out the following lines.
-
-```python
-def load_images(file_pattern, batch_size, dataset_name):
-  width, height = get_dataset_image_size(dataset_name)
-  images_actual_data = np.ndarray(shape=(batch_size, height, width, 3),
-                                  dtype='uint8')
-  for i in range(batch_size):
-    # path = file_pattern % i
-    # print("Reading %s" % path)
-    pil_image = PIL.Image.open(tf.gfile.GFile(file_pattern))
-    images_actual_data[i, ...] = np.asarray(pil_image)
-  return images_actual_data
-```
-
-Now from the same directory run the following command on your shell.
+From ```models/research/attention_ocr/python``` run the following command on your shell.
 
 ```bash
 python demo_inference.py --dataset_name=number_plates \n 
