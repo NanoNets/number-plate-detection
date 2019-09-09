@@ -60,4 +60,5 @@ From ```models/research/attention_ocr/python``` run the following command on you
 ```bash
 python demo_inference.py --dataset_name=number_plates \n 
 --batch_size=8, checkpoint='models/research/attention_ocr/number_plates_model_logs/model.ckpt-6000', \n
---image_path_pattern=/home/anuj/crops/%d.png```
+--image_path_pattern=/home/anuj/crops/%d.png
+```
