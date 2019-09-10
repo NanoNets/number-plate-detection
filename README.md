@@ -4,7 +4,7 @@
 
 We will use tensorflow attention-ocr to predict the text present on number plates. 
 
-![number-plates-detection](https://github.com/codeaway23/number-plate-detection/blob/master/data/results-gif.gif)
+![number-plates-detection](https://github.com/codeaway23/number-plate-detection/blob/master/data/results.gif)
 
 ## Usage
 
