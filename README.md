@@ -2,7 +2,7 @@
 
 ## Problem
 
-We will use tensorflow attention-ocr to predict the text present on number plates. 
+We will use tensorflow attention-ocr to predict the text present on number plates. The companion tutorial article can be found [here](https://nanonets.com/blog/attention-ocr-for-text-recogntion/)
 
 ## Usage
 
